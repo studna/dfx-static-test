@@ -1,0 +1,941 @@
+{
+  "common": {
+    "done": "Done",
+    "save": "Save",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "created": "Created",
+    "createdAt": "Created at {{date}}",
+    "lastPublished": "Last published on {{date}}",
+    "back": "Back",
+    "comingSoon": "Coming soon!",
+    "copiedToClipboard": "Successfully copied to clipboard",
+    "today": "Today",
+    "change": "Change",
+    "edit": "Edit",
+    "name": "Name",
+    "email": "Email",
+    "details": "Details",
+    "addPM": "Add Payment Method",
+    "at": "at",
+    "on": "on",
+    "size": "Size",
+    "verify": "Verify"
+  },
+  "hello": "hello world",
+  "module": {
+    "hello": "Helo World Module"
+  },
+  "auth": {
+    "page_title": "Fleek: Verifying User",
+    "success": "User was verifying correctly.",
+    "verifying": "Verifying user...",
+    "error": "Sorry, we got an error when trying verifying user."
+  },
+  "modals": {
+    "record": "Record",
+    "host": "Host",
+    "pointsTo": "Points to",
+    "dnsConfiguration": {
+      "title": "DNS Configuration",
+      "pointText": "Point app CNAME record to {{domain}}",
+      "description": "Log in to the account you have with your DNS provider, and add a CNAME record for app pointing to {{domain}}",
+      "command": "CNAME {{domain}} {{terminalRecord}}",
+      "footerText": "If you’ve already done this, allow up to 24 hours for the changes to propgate.",
+      "error": "Sorry we were unable to verify your DNS settings. Please make sure your DNS records as indicated below are correctly applied with your DNS provider. If you’ve already done so, please wait a few minutes and click Verify again.",
+      "buttons": {
+        "cancel": "Cancel",
+        "verifyDns": "Verify DNS configuration"
+      }
+    },
+    "nameServer": {
+      "title": "DNS Configuration",
+      "step1":{
+        "title": "Step 1: Point A record to {{ip}}",
+        "description": "Create an A record for {{domain}} pointing to our load balancer’s IP address {{ip}}.",
+        "command": "{{domain}} A {{ip}}"
+      },
+      "step2": {
+        "title": "Step 2: Create an NS record for _dnslink",
+        "description": "Create a NS record for _dnslink pointing to our name server.",
+        "command": "_dnslink NS {{server}}",
+        "footer": "Please make sure DNS records as indicated above are correctly applied with your DNS provider. It can take up to a few minutes to apply; click “Verify DNS Configuration” below to check if the changes have propagated."
+      },
+      "footer": "An SSL certificate will automatically be applied to the domain and an additional www.subdomain, that will be created to redirect to the root domain."
+    },
+    "paymentMethod": {
+      "title": "Add Payment Method",
+      "success": "Your payment info has been saved successfully",
+      "error": "An error has occurred while adding your payment information",
+      "form": {
+        "inputs": {
+          "name": {
+            "label": "Name",
+            "placeholder": "Jane Doe"
+          },
+          "country": {
+            "label": "Country",
+            "placeholder": "Choose Country"
+          },
+          "cta": "Save"
+        },
+        "errors": {
+          "title": "Error",
+          "name": "Name field can't be blank",
+          "country": "Country field can't be blank",
+          "card": "Invalid Credit Card",
+          "internal": "Internal error, please try again"
+        }
+      }
+    },
+    "deleteSite": {
+      "title": "Delete Site",
+      "siteNameInput": "Type in name of site to confirm",
+      "error": "Error when trying to delete the site, please try again later.",
+      "message": {
+        "part1": "Are you sure you want to delete",
+        "part2": "If so, please type the name of the site to confirm."
+      }
+    },
+    "uploadFiles": {
+      "title": "Upload",
+      "addFiles": "Add Files",
+      "dragFiles": "Drag files here or ",
+      "uploadLink": "click to upload",
+      "files": "Files:",
+      "folders": "Folders:",
+      "totalSize": "Total Size:",
+      "targetPath" :"Target Path:",
+      "filesUploaded": "files uploaded",
+      "uploadingProgress": "<0>{{uploadedItems}}</0> out of <0>{{totalItemsNumber}}</0>",
+      "uploadingError": "Error when trying to upload the files, please try again later.",
+      "uploaded": "Uploaded",
+      "partiallyUploaded": "Partially Uploaded"
+    },
+    "changeSiteName": {
+      "title": "Change site name",
+      "siteNameInput": "Site Name",
+      "error": "Error when trying to change the site name, please try again later.",
+      "message": "The site name determines the default URL for your site. Only alphanumeric characters and hyphens are allowed."
+    },
+    "dnsLink": {
+      "title": "Optional: Set up DNS link for your domain",
+      "subTitle": "Step 1: Add CNAME record to set up DNS link",
+      "subtitle2": "Add this CNAME record to your DNS provider to set up DNS link",
+      "cancel": "Cancel",
+      "verifyDns": "Verify DNS configuration",
+      "command": "CNAME from _dnslink.{{currentDomain}} to _dnslink.{{domain}}"
+    },
+    "createFolder": {
+      "title": "Create Folder",
+      "inputLabel": "Folder Name",
+      "error": "Error when trying to create a new folder, please try again later.",
+      "invalidName": "Folder name cannot contain any of the following characters: ?%*:|\"<>"
+    },
+    "deleteStoredItems": {
+      "title": "Delete File",
+      "messageOneFile": "Are you sure you want to delete {{fileName}} file?",
+      "messageManyFiles": "Are you sure you want to delete {{filesNumber}} files?",
+      "error": "Error when trying to remove the files, please try again later."
+    },
+    "apiDetails": {
+      "title": "API Details",
+      "copy": "Your api {{type}} was successfully copied to your clipboard.",
+      "warning": "API Secret is only visible upon generation",
+      "error": "We're sorry, there was an error when trying to generate a new api key.",
+      "inputs": {
+        "apiKey": "Api Key",
+        "apiSecret": "Api Secret"
+      }
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "team": "Team",
+      "sites": "Hosting",
+      "builds": "Builds",
+      "domains": "Domains",
+      "members": "Members",
+      "billing": "Billing",
+      "teamSettings": "Team Settings",
+      "storage": "Storage",
+      "new": "New",
+      "beta": "Beta",
+      "getCLI": "Get the SDK"
+    },
+    "teamSelector": {
+      "createTeam": "Create New Team"
+    },
+    "userMenu": {
+      "settings": "Settings",
+      "logout": "Log Out",
+      "signedAs": "Signed in as",
+      "loading": "...loading"
+    }
+  },
+  "sites": {
+    "title": "Hosting",
+    "page_title": "Fleek: Hosting",
+    "page_title_new_site": "Fleek: New Site",
+    "addNewSite": "Add New Site",
+    "deployFrom": "Deploys from",
+    "ownedBy": "Owned by",
+    "lastPublished": "Last published",
+    "deployInProgress": "Deploy in Progress...",
+    "failedDeploy": "Failed Deploy",
+    "at": "at",
+    "github": "Github",
+    "ipfs": "IPFS",
+    "andSymbol": "&",
+    "tabs": {
+      "overview": "Overview",
+      "deploys": {
+        "title": "Deploys",
+        "sections": {
+          "deployInfo": {
+            "title": "Deploy Info",
+            "subtitle": "Auto publishing is {{isAuto}}.",
+            "descriptionAuto": "Deploys from {{branch}} are published automatically.",
+            "descriptionNotAuto": "Deploys from {{branch}} are not published automatically.",
+            "on": "on",
+            "off": "off",
+            "button": "Deploy settings",
+            "listOfDeploys": {
+              "triggerDeploy": "Trigger deploy",
+              "deployItem": {
+                "goToCommitDetails": "Open GitHub with commit details",
+                "goToDeployDetails": "Go to deploy details",
+                "branchLabel": "Production:",
+                "deployPreview": "Deploy Preview:",
+                "deployMessagePlaceholder": "No deploy message",
+                "deployTime": "Deployed in {{time}}",
+                "startDeployTime": "{{dayAndMonth}} at {{hourAndMinute}}",
+                "deployTimePlaceholder": "Deploy Time Pending",
+                "timeFailedDeploy": "Deploy Failed",
+                "goToPR": "Open GitHub with PR details",
+                "prTitle": "Pull request <0>{{prNumber}}</0> to {{branch}}"
+              }
+            }
+          },
+          "deployStatus": {
+            "title": "Deploy Status",
+            "description": "Fleek's robots are busy building and deploying your site to IPFS and our CDN",
+            "retryDeploy": "Retry deploy",
+            "cancelDeploy": "Cancel deploy",
+            "publishDeploy": "Publish deploy",
+            "previewDeploy": "Preview deploy",
+            "deployInProgress": "Deploy in progress",
+            "publishedDeploy": "Published deploy",
+            "deploySuccessful": "Deploy successful",
+            "deployCancelled": "Cancelled",
+            "deployFailed": "Deploy failed"
+          }
+        }
+      },
+      "settings": {
+        "title": "Settings",
+        "http": {
+          "title" : "HTTPS",
+          "paragraph": "Enable automatic TLS certificates with Cloudflare, or use your own certificate"
+        },
+        "ssl": {
+          "title": "SSL/TLS certificate",
+          "errorParagraph": "To provision a certificate automatically, Fleek needs to go through a domain validation process on your behalf. This step cannot be completed unless the DNS records for your custom domain are already pointing at our servers.",
+          "buttonText": "VERIFY DNS CONFIGURATION",
+          "errorLink": "Learn more about HTTPS on custom domains",
+          "error": "We could not provision a Cloudflare certificate for your custom domain.",
+          "waiting": "Waiting on DNS propagation",
+          "waitingParagraph": "We’ll provision your Let’s Encrypt certificate automatically once the DNS configuration for your custom domain is pointing to our servers and the changes have propagated.",
+          "httpEnabled": "Your site has HTTPS enabled",
+          "certificate": "Certificate:",
+          "domains": "Domains:",
+          "expires": "Expires:",
+          "created": "Created:",
+          "notDeployed": "Waiting on Successful Deployment",
+          "notDeployedParagraph": "We’ll provision your SSL certificate automatically once you successfully deploy a site or add a custom domain to your site pointing to our servers."
+        },
+        "ens": {
+          "title" : "ENS",
+          "comingSoon": "Coming Soon!",
+          "paragraph": "Add your ENS to your Fleek site",
+          "setControllerModal": {
+            "title": "Set up Fleek ENS controller",
+            "migrateEnsStep": "Step {{stepNumber}}: Migrate your ENS",
+            "setControllerStep": "Step {{stepNumber}}: Set Fleek as ENS controller",
+            "verifyOwnershipStep": "Step {{stepNumber}}: Verify domain ownership",
+            "verifyOwnershipParagraph": "Verify that you are the owner of this domain by signing a message. This step does not create a transaction or cost gas.",
+            "migrateEnsParagraph": "Click Migrate below to go to app.ens.domains to update your ENS domain to the most recent resolver.",
+            "migrate": "Migrate",
+            "migrated": "Migrated",
+            "setControllerParagraph": "Set Fleek as a controller to your ENS domain to set your site to point to your ENS domain and automatically update for all future site deployments.",
+            "setControllerButton": "Set Fleek as controller",
+            "verifyOwnershipButton": "Verify ownership",
+            "errors": {
+              "generic" : "An error occurred",
+              "failedToConnect": "Failed to connect, please try again",
+              "wrongNetId": "Please switch to {{network}}",
+              "notOwnerOfDomain": "Connected account is not the owner of the domain",
+              "failedTransaction" : "The Ethereum transaction did not go through",
+              "rejectedTransaction": "The Ethereum transaction was rejected",
+              "failedToSignMessage": "Failed to sign message"
+            }
+          },
+          "ensBox": {
+            "title": "ENS Info",
+            "description": "Add an ENS domain to point to your deployed site. Fleek will automatically update future deployments to point to your ENS domain."
+          },
+          "domainRow": {
+            "ensDomain": "ENS domain",
+            "remove": "Remove domain",
+            "fleekController": "Fleek Controller",
+            "setFleek": "Set Fleek as controller",
+            "pending": "Pending transaction"
+          },
+          "noDomain": {
+            "addEns": "Add ENS",
+            "learnMore": "Learn more about ENS in our docs"
+          },
+          "addEns": {
+            "title": "Add a ENS domain to your site",
+            "description": "Use an existing ENS domain to deploy your site on. Fleek will update the IPFS hash the ENS name is pointing to for auto deploys.",
+            "learnMore": "Learn more about ENS in our docs",
+            "ensDomain": "ENS Domain",
+            "connectedTo": "Connected to {{ethAddress}}",
+            "alreadyOwner": "<0>{{owner}}</0> is the owner of {{domain}}. Is that you?",
+            "yesAdd": "Yes, Add ENS",
+            "noAnother": "No, Try Another",
+            "isAvailable": "{{domain}} is available!",
+            "wouldYouLike": "Would you like to make this purchase?",
+            "byClicking": "By clicking buy, we will redirect you to purchase your ENS domain",
+            "buyDomain": "Buy {{domain}}",
+            "setUpFleek": "Set up Fleek ENS controller",
+            "weRecommend": "We recommend you set Fleek as a controller on your ENS domain to automate updating the content of your site for future deployments.",
+            "setFleekAs": "Set Fleek as controller",
+            "domainRegistered": "This ENS domain is already associated with another Fleek site which could cause conflicts upon site updates.",
+            "notRegistrant": "You are not the registrant of this domain"
+          }
+        },
+        "domains": {
+          "title": "Domains",
+          "paragraph": "Add your own custom domain to your Fleek site for free"
+        },
+        "customDomains": {
+          "title": "Custom Domains",
+          "remove": "Remove domain",
+          "dnsLink": "Set Up DNS Link",
+          "dnsLinkVerified": "DNS Link Verified",
+          "success": "Custom domain was deleted correctly.",
+          "error": "Error when trying to delete the domain, please try again.",
+          "paragraph": "By default, your site is always accessible via a Fleek subdomain based on the site name. Custom domains allow you to access your site via one or more non-Fleek domain names.",
+          "buttonText": "Add Custom Domain",
+          "learnAboutCustomDomains": "Learn more about custom domains in our docs",
+          "learnAboutRedirect": "Learn more about redirect rules in our docs",
+          "defaultSubdomain": "Default subdomain",
+          "primaryDomain": "Primary domain",
+          "redirectsAutomatically": "Redirects automatically to primary domain",
+          "waitingOnDNS": "Waiting on DNS propagation",
+          "checkDNS": "Check DNS configuration",
+          "terminalDNS": "Fleek DNS",
+          "linkDNS": "DNS Link",
+          "successPayment": "Payment successfully processed",
+          "errorPayment": "Error processing the payment",
+          "pollingMessage": "You’ve successfully purchased a domain, please wait a couple of minutes for it to propagate.",
+          "types": {
+            "PRIMARY": "Primary domain",
+            "DEFAULT_SUBDOMAIN": "Default subdomain",
+            "REDIRECT_TO_PRIMARY": "Redirects automatically to primary domain"
+          }
+        }
+      }
+    },
+    "errors": {
+      "404": {
+        "title": "Page not found",
+        "description": "Sorry, we couldnt find the page you are looking for"
+      }
+    },
+    "start": {
+      "connectWithGithub": {
+        "step": "1. Connect to Github",
+        "title": "Continuous Deployment",
+        "subtitle": "When you push to Git we run your build tool on our services and deploy the result.",
+        "buttonMsg": "Connect with Github"
+      },
+      "buildOptions": {
+        "cardTitle": "Deploy settings for {{repository}}",
+        "cardSubtitle": "Get more control over how Fleek builds and deploys your site with these settings.",
+        "step": "3. Build options, and deploy!",
+        "title": "Basic build settings",
+        "subtitle": "If you're using a static site generator or build tool, we'll need these settings to build your site.",
+        "docs": "Learn more in our docs",
+        "deploySiteMsg": "Deploy site",
+        "pickPlan": "Pick a plan",
+        "pickPlanInfo": "The {{planName}} team plan includes up to {{sitesLimit}} sites, please upgrade your plan to deploy.",
+        "repository": "Repository",
+        "branchToDeploy": "Branch to deploy",
+        "buildCommand": "Build command",
+        "framework": "Framework",
+        "publishDirectory": "Publish directory",
+        "branchesPlaceholder": "No branches found",
+        "buildCommandTooltip": "The build command to run before deploying. Examples: build, gulp build, make all.",
+        "publishDirectoryTooltip": "The directory to deploy after running the build command. Examples: _site, dist, public.",
+        "dockerImageTooltip": "The docker image and tag from the Docker Hub to use as a base when building your site.",
+        "frameworkToolip": "The framework used by the site",
+        "gatsbyPlugin": "Make sure you have the Gatsby IPFS plugin installed in your app.",
+        "showAdvanced": "Show advanced",
+        "envVars": {
+          "title": "Environment Variables",
+          "subtitle": "Define environment variables for more control and flexibility over your build.",
+          "newVar": "New variable",
+          "keyPlaceholder": "VARIABLE_NAME",
+          "variablePlaceholder": "somevalue",
+          "keyLabel": "Key",
+          "variableLabel": "Value",
+          "errors": {
+            "onlyAlphaNumericAndUnderscore": "Variable names can only consist of alphanumeric characters and underscores.",
+            "startWithLetter": " Variable names must start with a letter."
+          }
+        },
+        "frameworkOptions":{
+          "other": "Other",
+          "nextJs": "NextJS",
+          "createReactApp": "Create React App",
+          "hugo": "Hugo",
+          "gatsby": "Gatsby",
+          "jekyll": "Jekyll",
+          "wordpress": "Wordpress",
+          "nuxtjs": "NuxtJS",
+          "gridsome": "Gridsome",
+          "svelte": "Svelte",
+          "mkdocs": "MkDocs",
+          "sapper": "Svelte + Sapper",
+          "wasmPack": "Wasm Pack"
+        }
+      },
+      "stepper": {
+        "title": "Create a new site",
+        "description": "From zero to hero, three easy steps to get your site live."
+      },
+      "pickRepository": {
+        "step": "2. Pick a repository",
+        "title": "Continuous Deployment: GitHub App",
+        "subtitle": "Choose the repository you want to link to your site on Fleek. When you push to Git we run your build tool on our services and deploy the result.",
+        "searchPlaceholder": "Search repos",
+        "editPermissionsLink": {
+          "question": "Can’t see your repo here?",
+          "link": "Configure the Fleek app on GitHub."
+        }
+      }
+    },
+    "siteHeader": {
+      "deploy": {
+        "DEPLOYED": "{{domain}}",
+        "IN_PROGRESS": "Site deploy in progress",
+        "FAILED": "Site has not yet been deployed",
+        "CANCELLED": "Site has not yet been deployed"
+      },
+      "ipfs": {
+        "pending": "IPFS Hash Pending",
+        "verify": "Verify on IPFS"
+      }
+    },
+    "overview": {
+      "name": "Name",
+      "owner": "Owner",
+      "repository": "GitHub Repo/Branch",
+      "ipfsHash": "Current IPFS Hash",
+      "numberOfDomains": "Number of Domains",
+      "certificate": "SSL Certificate",
+      "created": "Created",
+      "lastPublished": "Last Published",
+      "ssl": {
+        "CLOUDFLARE": "Cloudflare",
+        "LETS_ENCRYPT": "Let's Encrypt"
+      }
+    },
+    "deploys": {
+      "title": "Deploy Log",
+      "preview": "Preview",
+      "copyToClipboard": "Copy to Clipboard",
+      "summaryList": {
+        "title": "Deploy Summary",
+        "filesUploaded": {
+          "title": "All files already uploaded",
+          "subtitle": "All files already uploaded by a previous deploy with the same commits."
+        },
+        "redirectRulesProcessed": {
+          "title": "No redirect rules processed",
+          "subtitle": "This deploy did not include any redirect rules."
+        },
+        "headerRulesProcessed": {
+          "title": "No header rules processed",
+          "subtitle": "This deploy did not include any header rules."
+        },
+        "linkedResources": {
+          "title": "All linked resources are secure",
+          "subtitle": "Congratulations! No insecure mixed content found in your files."
+        },
+        "buildTime": {
+          "title": "Build time: {{buildTime}}. Total deploy time: {{totalDeployTime}}",
+          "subtitle": "Build started at {{startedAt}} and ended at {{endedAt}}."
+        }
+      },
+      "backToDeploys": "Back to All Deploys"
+    }
+  },
+  "members": {
+    "title": "Members",
+    "addMember": {
+      "title": "Add team members",
+      "subtitle": "We automatically update your billing as you add and remove team members.",
+      "emails": {
+        "title": "Emails of the new members",
+        "subtitle": "Use commas to add multiple emails.",
+        "fieldLabel": "Send invites to",
+        "invalidEmail": "One or more emails addresses are invalid",
+        "noEmailAddress": "Please add at least one email address",
+        "duplicate": "{{emails}} is already invited or on the team",
+        "duplicate_plural": "{{emails}} are already invited or on the team"
+      },
+      "error": {
+        "errorSendingInvitations": "An error occured while sending the invitations"
+      },
+      "extraSeats": {
+        "title": "Add extra Seats",
+        "description": "Inviting {{totalNewMembers}} new members will add <1>{{extraSeats}} extra seats at {{monthlyCost}}/month</1> to your monthly bill."
+      },
+      "buttonText": "INVITE MEMBERS"
+    },
+    "add": "Add members",
+    "invited": "Invited",
+    "tryAgain": "Try again",
+    "allSites": "All sites",
+    "remove": "Remove from team",
+    "error": "Error when trying to get your team members, please try again.",
+    "removeMember": {
+      "success": "Team member was deleted correctly.",
+      "error": "Error when trying to delete the member, please try again."
+    },
+    "roles": {
+      "admin": "Owner",
+      "member": "Collaborator"
+    }
+  },
+  "team": {
+    "title": "Team",
+    "create": {
+      "stepper": {
+        "title": "Create a new team",
+        "description": "Teams are the perfect environment for people to collaborate across multiple sites.",
+        "step1": {
+          "title": "1. Configure your team",
+          "teamName": {
+            "title": "What’s your team’s name?",
+            "subtitle": "Create a team and invite your team members.",
+            "inputLabel": "Team Name",
+            "pickPlan": "Pick a plan",
+            "reviewPayment": "Review payment",
+            "errors": {
+              "notAllowedChars": "Team name can only consist of alphanumeric characters, hyphens, dots and underscores.",
+              "notUnique": "Team name {{teamName}} is already taken."
+            }
+          }
+        },
+        "step2": {
+          "title": "2. Pick a plan"
+        },
+        "step3": {
+          "title": "3. Review team and payment",
+          "createTeam": "Create team",
+          "howManyPeople": "How many people are on your team?",
+          "inputLabel": "Number of users",
+          "additionalUsersLabel": "{{userNumber}} additional users @ ${{pricePerUser}} per user/month"
+        }
+      }
+    }
+  },
+  "teams": {
+    "pageTitle": "Fleek Hosting: Teams"
+  },
+  "billing": {
+    "title": "Billing",
+    "misc": {
+      "priceWithUnit": "${{price}}",
+      "unlimited": "Unlimited",
+      "custom": "Custom",
+      "priceDescription": "{{description}} price"
+    },
+    "creditCardDisplay": {
+      "text": "{{type}} ending in <1>{{digits}}</1>",
+      "noCreditCard": "No credit cards available",
+      "creditCardTypes": {
+        "amex": "Amex",
+        "discover": "Discover",
+        "mastercard": "Mastercard",
+        "visa": "Visa",
+        "defaultCard": "Card"
+      }
+    },
+    "changePlan": {
+      "pageTitle": "Fleek: Change Plan",
+      "back": "Back",
+      "stepper": {
+        "title": "Change your team plan",
+        "description": "Upgrade or downgrade your team to suit your business needs.",
+        "step1": "1. Select a Plan",
+        "step2": "2. Review team and payment"
+      },
+      "step2Payment": {
+        "pickedPlan": "{{type}}: {{price}}/month",
+        "whichPayment": "Which payment method would you like to use?",
+        "changePaymentMethod": "CHANGE PAYMENT METHOD",
+        "addPaymentMethod": "ADD PAYMENT METHOD",
+        "summary": "Summary",
+        "summarySubtitle": "Your next payment will be prorated according to your billing cycle.",
+        "typePlan": "{{type}} plan",
+        "total": "Total",
+        "updateTeam": "UPDATE TEAM",
+        "upTo": "up to {{limit}}",
+        "including": "{{plan}} (including {{siteLimit}} {{sitesText}}, {{userLimit}} {{usersText}})",
+        "userSingular": "user",
+        "userPlural": "users",
+        "siteSingular": "site",
+        "sitePlural": "sites"
+      },
+      "pickPlan": {
+        "title": "Pick a team plan",
+        "subtitle": "Pick the plan that best suits your team’s needs.",
+        "plans": {
+          "title": "{{name}}: {{price}}",
+          "pickPlan": "Pick Plan",
+          "contactSales": "Contact Sales",
+          "currentPlan": "Current plan",
+          "perMonth": "{{price}}/month",
+          "contactUs": "To revert to a {{startPlan}} plan, contact us at <1>{{supportEmail}}</1>"
+        }
+      }
+    },
+    "topBar": {
+      "title": "Billing"
+    },
+    "headerCard": {
+      "billingFor": "Billing for {{recipient}}",
+      "billingPeriod": "Current billing period runs from <1>{{startDate}}</1> to <3>{{endDate}}<3/>.",
+      "learnMore": "Learn more about billing in our docs"
+    },
+    "planDetails": {
+      "title": "Plan Details",
+      "subtitle": "Current plan information.",
+      "cardTitle": "Team Plan",
+      "link": "Learn more about plans on our pricing page",
+      "buttonText": "Change Plan",
+      "teamPlan": "{{type}} team plan",
+      "effectiveFrom": "Effective from {{startDate}}",
+      "mb": "MB",
+      "gb": "GB",
+      "bandwidth": "{{used}} {{unit}} / {{limit}} {{limitUnit}} bandwidth",
+      "minutes": "{{used}} / {{limit}} build minutes",
+      "price": "${{price}}"
+    },
+    "invoices": {
+      "title": "Invoices",
+      "subtitle": "Past and pending invoices for this team account.",
+      "receipts": {
+        "title": "Receipts",
+        "timestamp": "{{date}} at {{time}}",
+        "charged": "{{price}} charged to {{creditCard}} ending in {{fourLastDigits}}",
+        "defaultReceipt": "No Invoices!"
+      }
+    },
+    "billingSettings": {
+      "sectionTitles": {
+        "general": "General",
+        "planDetails": "Plan Details",
+        "invoices": "Invoices",
+        "billingDetails": "Billing Details"
+      }
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "Page not found",
+      "description": "Sorry, we couldnt find the page you are looking for",
+      "cta": "Go to Sites"
+    },
+    "500": {
+      "title": "Internal Server Error",
+      "description": "Sorry, something went wrong. Try again in a few minutes",
+      "cta": "Try again"
+    }
+  },
+  "siteSettings": {
+    "editSettings": "Edit settings",
+    "notSet": "Not set",
+    "sectionTitles": {
+      "buildAndDeploy": "Build & Deploy",
+      "continuousDeployment": "Continuous Deployment",
+      "domainManagement": "Domain Management",
+      "advancedBuildSettings": "Advanced Build Settings",
+      "domains": "Domains",
+      "ens": "ENS",
+      "https": "HTTPS",
+      "general": "General",
+      "siteDetails": "Site Details",
+      "dangerZone": "Danger Zone"
+    },
+    "deployment": {
+      "subtitle": "Settings for Continuous Deployment from a Git repository",
+      "buildSettings": {
+        "title": "Build Settings",
+        "repository": "Repository:",
+        "baseDirectory": "Base directory:",
+        "notSet": "Not set",
+        "buildCommand": "Build command:",
+        "publishDirectory": "Publish directory:",
+        "learnMore": "Learn more about common configuration directives in the docs",
+        "baseDirectoryTip": "Directory to change to before starting a build. Where we will look for package.json/.nvmrc/etc."
+      },
+      "deployContexts": {
+        "title": "Deploy Contexts",
+        "subtitle": "Deploy contexts are a way to tell Fleek how to build your site. They give you the flexibility to configure your site’s builds depending on the context they are going to be deployed to.",
+        "productionBranch": "Production branch:",
+        "learnMore": "Learn more about deploy contexts in the docs",
+        "error": "Sorry, we got an error when editing deploy settings.",
+        "previewPRs": {
+          "label": "Deploy previews",
+          "onTitle": "Automatically build deploy previews for all pull requests",
+          "onDescription": "Every pull request gets deployed in its own context with a unique URL.",
+          "offTitle": "Don’t build deploy previews for pull requests",
+          "offDescription": "Fleek won’t deploy any pull requests."
+        }
+      },
+      "advancedBuildSettings": {
+        "title": "Advanced Build Settings",
+        "subtitle": "Advanced settings for environment variables and docker"
+      },
+      "environmentVariables": {
+        "title": "Environment Variables",
+        "subtitle": "Set environment variables for your build script and add-ons.",
+        "learnMore": "Learn more about environment variables in the docs",
+        "editVariables": "EDIT VARIABLES",
+        "key": "Key",
+        "value": "Value",
+        "error": "Sorry, we got an error when editing the environment variables"
+      },
+      "dockerFile": {
+        "title": "Specify Docker Image",
+        "subtitle": "Specify a docker image and tag from the Docker Hub to use as a base when building your site.",
+        "learnMore": "Learn more about specifying docker images in the docs",
+        "error": "Sorry, we got an error when editing docker image settings.",
+        "label": "Docker Image Name (e.g. node:lts)",
+        "labelFirstLine": "Docker Image Name",
+        "labelSecondLine": "(e.g. node:lts)"
+      }
+    },
+    "general": {
+      "siteDetails": {
+        "title": "Site Information",
+        "subtitle": "General information about your site",
+        "siteName": "Site name",
+        "owner": "Owner",
+        "siteId": "Site ID",
+        "created": "Created",
+        "lastUpdate": "Last update",
+        "changeName": "Change Site Name"
+      },
+      "dangerZone": {
+        "title": "Delete Site",
+        "subtitle": "Irreversible and destructive actions.",
+        "content": "Once you delete a site, there is no going back.",
+        "deleteSite": "Delete this site"
+      }
+    }
+  },
+  "addCustomDomain": {
+    "pageTitle": "Fleek: Add custom domain",
+    "title": "Add a custom domain to your site",
+    "description": "You can bring a domain name that you already own, or buy a new one. When you buy the domain with us, we automatically configure your DNS settings and provision a wildcard certificate for your domain.",
+    "linkToDocs": "Learn more in our docs",
+    "inputLabel": "Custom Domain",
+    "verifyDomain": "Verify",
+    "errors": {
+      "invalidDomain": "Invalid Domain"
+    },
+    "ownerPart": {
+      "question": "already has an owner. Is it you?",
+      "confirm": "Yes, Add Domain",
+      "cancel": "No, Try Another"
+    },
+    "purchasing": {
+      "title": "{{domainName}} is available!",
+      "description": "Purchasing domains within Fleek will be available soon. In the meantime purchase your domain elsewhere and add it as an external domain.",
+      "submit": "Add external domain"
+    },
+    "buyDomain": {
+      "title": "{{domainName}} is available!",
+      "noPaymentMethod": "No payment methods available",
+      "availablePM": "Available payment method:",
+      "changePaymentMehtod": "Change Payment Method",
+      "addPaymentMethod": "Add new payment method",
+      "subtitle": "Registration costs ${{cost}} for the first year. Would you like to make this purchase?",
+      "detail": "Add a payment method so that we can process the charge. This transaction is non-refundable. This domain registration will auto-renew for ${{renewCost}} for the second year.",
+      "buyCTA": "Buy {{domain}}"
+    }
+  },
+  "siteDeploys": {
+    "sections": {
+      "deployInfo": {
+        "title": "Deploy Info",
+        "subtitle": "Auto publishing is on.",
+        "description": "Deploys from master are published automatically.",
+        "button": "Deploy settings",
+        "listOfDeploys": {
+          "triggerDeploy": "Trigger deploy",
+          "errorTriggerDeploy": "An error occurred while triggering the deploy",
+          "deployItem": {
+            "deployMessagePlaceholder": "No deploy message",
+            "deployTime": "Deployed in {{time}}"
+          }
+        }
+      }
+    }
+  },
+  "deploymentStatus": {
+    "published": "Published",
+    "failed": "Failed",
+    "inProgress": "In Progress",
+    "cancelled": "Cancelled"
+  },
+  "githubAuthorized": {
+    "title": "Authorized",
+    "logoAlt": "Fleek Logo"
+  },
+  "noDataInfo": {
+    "sitesList": {
+      "title": "Sites",
+      "subtitle": "Host your site on IPFS (You’re on one now)",
+      "description": "Host your sites on IPFS in 3 quick steps. Connect your git provider, select a repo and deploy!\nAll your sites will be listed here once you add them.",
+      "buttonText": "Add new site",
+      "goToDocs": "Learn more about Sites in our docs"
+    }
+  },
+  "sitesGettingStarted": {
+    "title": "Getting Started",
+    "firstStep": {
+      "instruction": {
+        "title": "Deploying your site",
+        "subtitle": "Fleek’s robots are busy building and deploying your site to IPFS and our CDN.",
+        "buttonText": "Check Deploy Status"
+      },
+      "done": {
+        "title": "Site is deployed",
+        "subtitle": "Fleek’s robots built and deployed your site to IPFS and our CDN."
+      }
+    },
+    "secondStep": {
+      "instruction": {
+        "title": "Set up a custom domain with SSL",
+        "subtitle": "Buy a new domain or setup a domain you already own. All domains come with a free SSL cert.",
+        "addDomainButtonText": "Add or Buy Domain",
+        "verifyDomainButtonText": "Verify Domain"
+      },
+      "done": {
+        "title": "Custom domain and SSL added",
+        "subtitle": "{{domainName}} was added as a custom domain with an SSL certifacte."
+      }
+    }
+  },
+  "billingDetails": {
+    "title": "Billing Details",
+    "subtitle": "Payment and billing information for this team account.",
+    "paymentInformation": {
+      "title": "Payment Information",
+      "paymentMethod": "Payment Method:",
+      "cardInfo": "{{cardName}} ending in {{cardLastFourDigits}}"
+    },
+    "billingInformation": {
+      "title": "Billing Information",
+      "name": "Name:",
+      "email": "Email:",
+      "placeholder": "No payment method added"
+    }
+  },
+  "topBanner": {
+    "message": "We released the Space Daemon for building peer-to-peer encrypted apps. <0>Learn More</0>"
+  },
+  "siteSuspendedOverlay": {
+    "title": "Site Suspended",
+    "description": "Your account has been suspended for an overdue bill for more than 30 days. Add your billing information.",
+    "buttonText": "Add Payment"
+  },
+  "accountSuspensionBanner": {
+    "suspendedMessage": "Your account has been suspended for an overdue bill for more than 30 days. <1>Add your billing information.</1>",
+    "restrictedMessage": "Your account has been overdue for more than 15 days. It will be suspended after 30 days. <1>Add your billing information.</1>"
+  },
+  "storage": {
+    "title": "Storage",
+    "upload": "Upload",
+    "actions": "Actions",
+    "open": "Open",
+    "download": "Download",
+    "downloadAs": "Download as",
+    "copyPath": "Copy Path",
+    "createFolder": "Create Folder",
+    "header": "File Information",
+    "lastModified": "Last modified, {{date}}",
+    "tabs": {
+      "overview": "OVERVIEW",
+      "settings": "SETTINGS"
+    },
+    "details": {
+      "name": "Name",
+      "hash": "Hash",
+      "size": "Size",
+      "owner": "Owner",
+      "created": "Created",
+      "objectUrl": "Object URL"
+    },
+    "table": {
+      "columns": {
+        "name": "Name",
+        "lastModified": "Last Modified",
+        "size": "Size"
+      },
+      "emptyMessage": "No folders or files found"
+    },
+    "actionsMessage": {
+      "copyPathSuccess": "Object path copied to the clipboard!",
+      "downloadSuccess": "We are processing your download..."
+    }
+  },
+  "accountSettings": {
+    "pageTitle": "Fleek: Account Settings",
+    "join": "Joined on {{date}}",
+    "error": "We're sorry, there was an error when trying to get the account info.",
+    "navs": {
+      "general": "General",
+      "profile": "Profile",
+      "api": "Api"
+    },
+    "api": {
+      "title": "Api",
+      "description": "Use our API for Storage CLI & SDK",
+      "card": {
+        "title": "Api Details",
+        "apiKey": "Api Key",
+        "new": "Create New API Key",
+        "copy": "Your api key was successfully copied to your clipboard."
+      }
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Personal information details",
+      "card": {
+        "title": "Personal information",
+        "name": "Name",
+        "email": "Email"
+      }
+    }
+  }
+}

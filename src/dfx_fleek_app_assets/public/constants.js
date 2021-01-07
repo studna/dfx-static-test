@@ -1,0 +1,49 @@
+export const DEPLOY_STATUS = {
+  IN_PROGRESS: 'IN_PROGRESS',
+  FAILED: 'FAILED',
+  CANCELLED: 'CANCELLED',
+  DEPLOYED: 'DEPLOYED',
+};
+
+export const DOMAIN_TYPE = {
+  PRIMARY: 'PRIMARY',
+  DEFAULT_SUBDOMAIN: 'DEFAULT_SUBDOMAIN',
+  REDIRECT_TO_PRIMARY: 'REDIRECT_TO_PRIMARY',
+  ALIAS_DOMAIN: 'ALIAS_DOMAIN',
+};
+
+export const DOMAIN_STATUS = {
+  PENDING_PROPAGATION: 'PENDING_PROPAGATION',
+  PROPAGATED: 'PROPAGATED',
+  ERROR: 'ERROR',
+};
+
+export const GIT_EVENT = {
+  PULL_REQUEST: 'pull_request',
+  PUSH: 'push',
+};
+
+export const GA_EVENTS_CATEGORIES = {
+  SITES: 'Sites',
+  BILLING: 'Billing',
+};
+
+export const TEAM_STATUS = {
+  ACTIVE: 'ACTIVE',
+  OVERDUE: 'OVERDUE',
+  RESTRICTED: 'RESTRICTED',
+  SUSPENDED: 'SUSPENDED',
+};
+
+export const FREE_PLAN_ID = 'PRO_PLAN';
+export const ID_OF_SCROLLABLE_ELEMENT = 'scrollable-element';
+export const LIMIT_SITES_PAGINATION = 20;
+export const LIMIT_DEPLOYS_PAGINATION = 20;
+export const PLANS_CUSTOM_LIMIT = -2;
+
+/* STORAGE CONSTANTS */
+
+// actions
+export const SEARCH_TERM_CHANGE = 'SEARCH_TERM_CHANGE';
+
+/* END STORAGE CONSTANTS */

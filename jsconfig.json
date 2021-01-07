@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@Clients": ["src/dfx_fleek_app_assets/public/clients"],
+      "@Shared": ["src/dfx_fleek_app_assets/public/shared"],
+      "~": ["src/dfx_fleek_app_assets/public"]      
+    }
+  },
+  "exclude": ["node_modules"]
+}

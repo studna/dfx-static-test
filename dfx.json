@@ -5,9 +5,6 @@
       "type": "motoko"
     },
     "dfx_fleek_app_assets": {
-      "dependencies": [
-        "dfx_fleek_app"
-      ],
       "frontend": {
         "entrypoint": "src/dfx_fleek_app_assets/public/index.js"
       },
