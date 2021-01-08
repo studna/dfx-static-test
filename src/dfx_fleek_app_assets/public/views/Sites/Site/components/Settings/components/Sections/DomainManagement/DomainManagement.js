@@ -29,6 +29,9 @@ import Ens from '../../Subsections/Ens';
 import {
   onVerifyDnsOnCompleted,
 } from './utils/verify-dns';
+// this one file contains a lot of dependencies,
+// because of size, I wasn't upload assets to canister
+// import handleSetController from './utils/ens/handle-set-controller';
 import { SECTION_IDS } from '../../../get-navigation-items';
 import { VERIFY_DNS_CONFIGURATION } from '../../../graphql/mutations';
 import { getPurchasedDomainPendings } from './utils/purchased-domain-pending';
