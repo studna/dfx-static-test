@@ -18,6 +18,8 @@ window.analytics = {
   page(){},
 }
 
+window.gtag = () => {};
+window.ga = () => {};
 
 // import * as serviceWorker from './serviceWorker';
 
